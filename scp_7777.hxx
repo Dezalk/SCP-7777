@@ -5,7 +5,7 @@
 #include <string>
 
 namespace scp_7777 {
-    template<class T> std::basic_string<T> encode(const std::basic_string<T>& plain_text, size_t total_length, auto seed) {
+    template<class T> std::basic_string<T> encode(const std::basic_string<T>& plain_text) {
         std::basic_string<T> cipher_text;
         for (const T& ch : plain_text) {
             cipher_text += std::string(static_cast<size_t>(ch), '7');
@@ -13,6 +13,11 @@ namespace scp_7777 {
                 cipher_text += '0';
             }
         }
+        return cipher_text;
+    }
+
+    template<class T> std::basic_string<T> encode(const std::basic_string<T>& plain_text, size_t total_length, auto seed) {
+        std::basic_string<T> cipher_text = encode(plain_text);
         if (total_length > cipher_text.length()) {
             std::default_random_engine engine(seed);
             size_t offset;
