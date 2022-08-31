@@ -1,20 +1,16 @@
-// scp_7777.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include "scp_7777.hxx"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+    for (std::size_t i = 0; const std::string& instance : scp_7777::instances) {
+        i++;
+        if (instance[0] != '[') {
+            std::cout << "[Instance " << i << "]\n";
+            std::string encoded = scp_7777::encode(instance, 0x7777, 0x7777);
+            std::string decoded = scp_7777::decode(encoded);
+            std::cout << "Original (" << instance.length() << " ch) :\t" << instance << '\n';
+            std::cout << "Encoded (" << encoded.length() << " ch) :\t" << encoded << '\n';
+            std::cout << "Decoded (" << decoded.length() << " ch) :\t" << decoded << "\n\n";
+        }
+    }
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
