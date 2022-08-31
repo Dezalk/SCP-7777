@@ -4,7 +4,6 @@
 #include <ranges>
 #include <string>
 
-//https://scp-wiki.wikidot.com/scp-7777
 namespace scp_7777 {
     template<class T> std::basic_string<T> encode(const std::basic_string<T>& plain_text, size_t total_length, auto seed) {
         std::basic_string<T> cipher_text;
