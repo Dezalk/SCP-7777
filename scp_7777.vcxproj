@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="scp_7777.cpp" />
+    <ClCompile Include="scp_7777.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scp_7777.hxx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
