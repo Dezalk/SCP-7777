@@ -5,5 +5,5 @@ All functions read a STL string object and return another STL string object. C-s
 
 The list of instances are taken verbatim from the original SCP-7777.
 
-#Licensing
+# Licensing
 This code is based on "SCP-7777" by Yossipossi, from the SCP Wiki. Source: https://scp-wiki.wikidot.com/scp-7777. Licensed under CC-BY-SA.
